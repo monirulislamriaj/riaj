@@ -2,7 +2,7 @@
   position: relative;
   // background: linear-gradient(239.24deg, #f4f7fe 22.34%, #fbfcff 83.1%);
   background-color: #060a11;
-  padding-top: 9.375rem;
+  padding-top: 10rem;
   padding-bottom: 4.5rem;
   @include desktop {
     padding-bottom: 2.5rem;
@@ -73,18 +73,6 @@
         max-width: 100%;
         border-radius: 60px;
       }
-      //   &::before {
-      //     position: absolute;
-      //     content: "";
-      //     width: 186px;
-      //     height: 186px;
-      //     background: #f1b000;
-      //     top: 50%;
-      //     left: 50%;
-      //     transform: translate(-50%, -36%);
-      //     z-index: -1;
-      //     border-radius: 50%;
-      //   }
     }
     span {
       font-size: 24px;

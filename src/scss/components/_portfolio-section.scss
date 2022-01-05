@@ -1,10 +1,14 @@
-.portfolio {
-  margin: 0px 0 50px 0;
+.portfolio,
+.portfolio-two {
+  margin: 0px 0 100px 0;
   padding: 0;
+  display: block;
+  position: relative;
   @include desktop {
     margin: 50px 0;
   }
   &__header {
+    position: relative;
     margin-bottom: 80px;
     @include tablet {
       margin-bottom: 50px;
@@ -13,10 +17,21 @@
       margin-bottom: 20px;
     }
     span {
+      position: relative;
       display: block;
       font-size: 20px;
       font-family: $secondary-font;
-      margin: 0 0 30px 0;
+      margin: 0 0 30px 30px;
+      &::before {
+        position: absolute;
+        content: "";
+        height: 2px;
+        width: 20px;
+        top: 50%;
+        left: -20px;
+        transform: translateX(-50%);
+        background: $secondary-color;
+      }
     }
     h1 {
       margin: 0 0 20px 0;
@@ -27,6 +42,89 @@
       @include tablet {
         font-size: 40px;
       }
+    }
+    &_button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      a {
+        display: inline-block;
+        padding: 15px 40px;
+        background: #fff;
+        border: 1px solid #e4e6eb;
+        border-radius: 7px;
+        font-family: $secondary-font;
+        text-decoration: none;
+        font-size: 17px;
+        color: #282f49;
+        transition: all 0.3s ease;
+        transform: scale(1);
+        @include desktop {
+          position: relative;
+          margin-top: 30px;
+        }
+        &:hover {
+          background: $primary-color;
+          border: 1px solid transparent;
+          color: #fff;
+          transform: scale(1.03);
+          box-shadow: 0 8px 20px rgba(56, 87, 241, 0.3);
+        }
+      }
+    }
+  }
+  &__shape {
+    position: absolute;
+    top: -5%;
+    right: 12%;
+    img {
+      animation: rotate 25s infinite linear;
+    }
+    @include desktop {
+      display: none;
+    }
+  }
+  &__background_shape {
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    svg {
+      width: 100%;
+    }
+    @include desktop {
+      display: none;
+    }
+  }
+  &__background_pattern {
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    animation: move_top 3s infinite linear;
+    img {
+      height: 100%;
+      width: 100%;
+    }
+    @include desktop {
+      display: none;
+    }
+  }
+  // start portfolio-two section
+  &-two {
+    padding: 200px 0 50px;
+    .portfolio__shape {
+      position: absolute;
+      top: 10%;
+      right: 12%;
+    }
+    .portfolio__background_shape {
+      position: absolute;
+      top: 10%;
+      left: 2%;
+    }
+    .portfolio__background_pattern {
+      position: absolute;
+      top: 20%;
+      left: 10%;
     }
   }
   .isotop-menu {
@@ -41,8 +139,9 @@
       background: none;
       border: none;
       color: $text-color;
-      font-size: 16px;
+      font-size: 22px;
       text-transform: capitalize;
+      font-weight: 700;
       cursor: pointer;
       margin-right: 40px;
       transition: all 0.3s ease-in-out;
@@ -62,19 +161,18 @@
     }
   }
   .active {
-    color: $text-color-dark !important;
+    color: #5d78ff !important;
   }
 
   .portfolio__element-item {
     margin-bottom: 50px;
-    padding: 30px;
+    // padding: 30px;
     display: inline-block;
     &-thumb {
       border-radius: 20px;
       overflow: hidden;
       transition: all 0.3s ease;
       img {
-        height: 100%;
         width: 100%;
       }
     }
@@ -137,5 +235,18 @@
         }
       }
     }
+  }
+}
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes animate-positive {
+  0% {
+    width: 0;
   }
 }

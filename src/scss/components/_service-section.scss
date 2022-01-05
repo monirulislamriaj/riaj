@@ -63,7 +63,7 @@
           bottom: 0;
           left: 0;
           right: 0;
-          background-color: rgba(252, 96, 96, 0.9);
+          background-color: rgb(93, 120, 255, 0.72);
           opacity: 0;
           border-radius: 20px;
           display: flex;
@@ -74,13 +74,15 @@
             text-align: center;
             i {
               color: #ffffff;
+              // background-color: rgba(252, 96, 96, 0.9);
               font-size: 32px;
               display: block;
               margin-bottom: 15px;
               font-family: "FontAwesome";
             }
             span {
-              font-size: 14px;
+              font-size: 16px;
+              font-weight: 700;
               margin-bottom: 0;
               color: #ffffff;
             }
